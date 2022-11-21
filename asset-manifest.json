@@ -1,0 +1,14 @@
+{
+  "files": {
+    "main.css": "/frontend-app.github.io/static/css/main.ac0a3b3e.css",
+    "main.js": "/frontend-app.github.io/static/js/main.0bef5b07.js",
+    "static/media/logo.svg": "/frontend-app.github.io/static/media/logo.32a5e75ed32721c64c91ed1ceca62c39.svg",
+    "index.html": "/frontend-app.github.io/index.html",
+    "main.ac0a3b3e.css.map": "/frontend-app.github.io/static/css/main.ac0a3b3e.css.map",
+    "main.0bef5b07.js.map": "/frontend-app.github.io/static/js/main.0bef5b07.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.ac0a3b3e.css",
+    "static/js/main.0bef5b07.js"
+  ]
+}
