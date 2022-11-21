@@ -11,6 +11,7 @@ const Country = () => {
         const response = await axios.get(baseURL);
         setRow(response.data);
     }
+    
     useEffect(() => {
         getAllDiseaseType();
     }, []);
