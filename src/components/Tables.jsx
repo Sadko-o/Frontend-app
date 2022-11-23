@@ -1,24 +1,27 @@
 import React from 'react'
 // import ProjectTable from './ProjectTable'
 // import Navbar from './Navbar'
-import Disease from './Disease'
-import DiseaseType from './DiseaseType'
-import Country from './Country'
-import Discover from './Discover'
-import PublicServant from './PublicServant'
-import Doctor from './Doctor'
-import Specialize from './Specialize'
-import Record from './Record'
-import Users from './Users'
+// import Disease from './Disease'
+// import DiseaseType from './DiseaseType'
+// import Country from './Country'
+// import Discover from './Discover'
+// import PublicServant from './PublicServant'
+// import Doctor from './Doctors'
+// import Specialize from './Specialize'
+// import Record from './Record'
+// import Users from './Users'
 import logo from './assets/logo.svg'
 
 
 const Tables = () => {
-  const [part, setParts] = React.useState(0);
-  // const [active, setActive] = React.useState(0);
-
+//   const [part, setParts] = React.useState(0);
+//   const [active, setActive] = React.useState(0);
+//   const textDark = {color:'text-red-500'};
+//   const handleClick = () => {
+//     setActive(!active);
+//     }
   return (
-      <div>
+      <div className='fixed max w-screen'>
           <nav class="bg-white dark:bg-gray-800  shadow ">
               <div class="max-w-7xl mx-auto px-8">
                   <div class="flex items-center justify-between h-16">
@@ -28,32 +31,35 @@ const Tables = () => {
                           </a>
                           <div class="hidden md:block">
                               <div class="ml-10 flex items-baseline space-x-4">
-                                  <a  class=" text-gray-300  hover:text-gray-800 dark:hover:text-white px-3 py-2 rounded-md text-sm font-medium" href="/diseaseType" onClick={()=> {setParts(0) }}>
+                                  <a  class=" text-gray-800  hover:text-[#4885ed] dark:hover:text-white px-3 py-2 rounded-md text-sm font-medium" href="/diseaseType" >
                                       DiseaseType
                                   </a>{/* text-gray-800 dark:text-white  hover:text-gray-800 dark:hover:text-white px-3 py-2 rounded-md text-sm font-medium */}
-                                  <a class="text-gray-300  hover:text-gray-800 dark:hover:text-white px-3 py-2 rounded-md text-sm font-medium " href="/country" onClick={()=>setParts(1)}>
+                                  <a class="text-gray-800  hover:text-[#4885ed] dark:hover:text-white px-3 py-2 rounded-md text-sm font-medium " href="/country">
                                       Country
                                   </a>
-                                  <a class="text-gray-300  hover:text-gray-800 dark:hover:text-white px-3 py-2 rounded-md text-sm font-medium" href="/disease" onClick={()=>setParts(2)}>
+                                  <a class="text-gray-800  hover:text-[#4885ed] dark:hover:text-white px-3 py-2 rounded-md text-sm font-medium" href="/disease">
                                       Disease
                                   </a>
-                                  <a class="text-gray-300  hover:text-gray-800 dark:hover:text-white px-3 py-2 rounded-md text-sm font-medium" href="/discover" onClick={()=>setParts(3)}>
+                                  <a class="text-gray-800  hover:text-[#4885ed] dark:hover:text-white px-3 py-2 rounded-md text-sm font-medium" href="/discover">
                                       Discover
                                   </a>
-                                  <a class="text-gray-300  hover:text-gray-800 dark:hover:text-white px-3 py-2 rounded-md text-sm font-medium" href="/users" onClick={()=>setParts(4)}> 
+                                  <a class="text-gray-800  hover:text-[#4885ed] dark:hover:text-white px-3 py-2 rounded-md text-sm font-medium" href="/users">
                                       Users
                                   </a>
-                                  <a class="text-gray-300  hover:text-gray-800 dark:hover:text-white px-3 py-2 rounded-md text-sm font-medium" href="/publicServent" onClick={()=>setParts(5)}>
+                                  <a class="text-gray-800  hover:text-[#4885ed] dark:hover:text-white px-3 py-2 rounded-md text-sm font-medium" href="/publicServant">
                                       PublicServant
                                   </a>
-                                  <a class="text-gray-300  hover:text-gray-800 dark:hover:text-white px-3 py-2 rounded-md text-sm font-medium" href="/doctors" onClick={()=>setParts(6)}>
+                                  <a class="text-gray-800  hover:text-[#4885ed] dark:hover:text-white px-3 py-2 rounded-md text-sm font-medium" href="/doctors">
                                       Doctor
                                   </a>
-                                  <a class="text-gray-300  hover:text-gray-800 dark:hover:text-white px-3 py-2 rounded-md text-sm font-medium" href="/specialize" onClick={()=>setParts(7)}>
+                                  <a class="text-gray-800  hover:text-[#4885ed] dark:hover:text-white px-3 py-2 rounded-md text-sm font-medium" href="/specialize">
                                       Specialize
                                   </a>
-                                  <a class="text-gray-300  hover:text-gray-800 dark:hover:text-white px-3 py-2 rounded-md text-sm font-medium" href="/record" onClick={()=>setParts(8)}>
+                                  <a class="text-gray-800  hover:text-[#4885ed] dark:hover:text-white px-3 py-2 rounded-md text-sm font-medium" href="/record">
                                       Record
+                                  </a>
+                                  <a class="text-gray-800  hover:text-[#4885ed] dark:hover:text-white px-3 py-2 rounded-md text-sm font-medium" href="/#">
+                                      Queries
                                   </a>
                               </div>
                           </div>
@@ -106,16 +112,16 @@ const Tables = () => {
           </nav>
       </div>
     )
-    // {part? 1: <DiseaseType/>}
-    {part===0 && <DiseaseType/>} 
-    {part===1 && <Country/>}
-    {part===2 && <Disease/>}
-    {part===3 && <Discover/>}
-    {part===4 && <Users/>}
-    {part===5 && <PublicServant/>}
-    {part===6 && <Doctor/>}
-    {part===7 && <Specialize/>}
-    {part===8 && <Record/>}
+
+    // {part===0 && <DiseaseType/>} 
+    // {part===1 && <Country/>}
+    // {part===2 && <Disease/>}
+    // {part===3 && <Discover/>}
+    // {part===4 && <Users/>}
+    // {part===5 && <PublicServant/>}
+    // {part===6 && <Doctor/>}
+    // {part===7 && <Specialize/>}
+    // {part===8 && <Record/>}
     
   } 
 

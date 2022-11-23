@@ -4,8 +4,8 @@ import React, {useState, useEffect} from 'react'
 import Tables from './Tables'
 
 // COMPONENT
-const Specialize = () => {
-    const baseURL = "https://backend-app-production-2791.up.railway.app/specialize";
+const Doctors = () => {
+    const baseURL = "https://backend-app-production-2791.up.railway.app/doctors";
     const [row, setRow] = useState(null);
     const [updateModel, setUpdateModel] = useState({ show: false, id: null });
     const [deleteModal, setDeleteModal] = useState(false); 
@@ -58,7 +58,7 @@ const Specialize = () => {
                 <div className="w-full lg:w-5/6">
                     <div className="bg-white shadow-xl rounded-[12px] my-6">
                         <div className=' bg-white py-3 rounded-tl-lg rounded-tr-lg  px-3 text-left flex justify-between'>
-                            <h2 className=" bg-white py-2 px-2 text-[#4885ed] pb-2 text-xl font-bold sm:text-2xl">Specialize</h2>
+                            <h2 className=" bg-white py-2 px-2 text-[#4885ed] pb-2 text-xl font-bold sm:text-2xl">Doctors</h2>
                             <button type="button" className="py-2 px-4  w-28 bg-[#3cba54] hover:bg-[#db3236] focus:ring-pink-500 focus:ring-offset-pink-200 text-white  transition ease-in duration-200 text-center text-base font-semibold shadow-md focus:outline-none focus:ring-2 focus:ring-offset-2  rounded-lg"  onClick={()=>setCreateModal(true)}>
                                 Create
                             </button>
@@ -229,4 +229,4 @@ const Specialize = () => {
     )
 }
 
-export default Specialize
+export default Doctors
