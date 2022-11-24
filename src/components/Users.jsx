@@ -10,36 +10,41 @@ const Users = () => {
     const [updateModel, setUpdateModel] = useState({ show: false, id: null });
     const [deleteModal, setDeleteModal] = useState(false); 
     const [createModal, setCreateModal] = useState(false);
-    const [diseaseTypeId, setDiseaseTypeId] = useState('');
-    const [diseaseTypeDescription, setDiseaseTypeDescription] = useState('');
+    const [email, setEmail] = useState("");
+    const [name, setName] = useState("");
+    const [surname, setSurname] = useState("");
+    const [salary, setSalary] = useState("");
+    const [phone, setPhone] = useState("");
+    const [cname, setCname] = useState("");
+
 
     //CREATE
-    const createDiseaseType = async () => {
-        // await axios.post(`${baseURL}`,  {id, description}).then((response) => {console.log(response)});
-        // getAllDiseaseType();
+    const createUser = () => {
+        axios.post(`${baseURL}`,  {email, name, surname, salary, phone, cname}).then(() => {getAllUsers();});
     }
-    const handleCreate = () => {
-        createDiseaseType();
+    const handleCreate = (e) => {
+        e.preventDefault();
+        createUser();
     }
 
     //READ
-    const getAllDiseaseType = async () => {
+    const getAllUsers = async () => {
         const response = await axios.get(baseURL);
         setRow(response.data);
     }
     useEffect(() => {
-        getAllDiseaseType();
+        getAllUsers();
     }, []);
 
     //DELETE
-    const deleteDiseaseType = async (id) => {
-        await axios.delete(`${baseURL}`, {data: {id: id}});
-        getAllDiseaseType();
+    const deleteUser = async (email) => {
+        await axios.delete(`${baseURL}`, {email});
+        getAllUsers();
     }
     const handleDelete = (e, id) => {
         e.preventDefault();
         setDeleteModal(true);
-        deleteDiseaseType(id);
+        deleteUser(id);
     }
 
     //UPDATE
@@ -47,14 +52,14 @@ const Users = () => {
     //         console.log(id);
     //         console.log(description);
     //         await axios.put(`${baseURL}`,  {id: id, description:description}).then((response) => {console.log(response)});
-    //         getAllDiseaseType();
+    //         getAllUsers();
     // }
 
     return (
         <>
         <Tables/>
-        <div >
-            <div className="min-w-screen min-h-screen pt-10 flex items-center justify-center bg-[#e3e3e3] font-sans overflow-hidden">
+        <div className='pt-10 bg-[#e3e3e3]'>
+            <div className="min-w-screen min-h-screen flex items-center justify-center bg-[#e3e3e3] font-sans overflow-hidden">
                 <div className="w-full lg:w-5/6">
                     <div className="bg-white shadow-xl rounded-[12px] my-6">
                         <div className=' bg-white py-3 rounded-tl-lg rounded-tr-lg  px-3 text-left flex justify-between'>
@@ -117,14 +122,14 @@ const Users = () => {
                                         </div>
                                     </td>
 
-                                    <td className="py-3 px-3 text-center">
+                                    <td className="py-3 px-3 text-center z-0">
                                         <div className="flex item-center justify-center">
-                                            <div className="w-4 mr-2 transform hover:text-purple-500 hover:scale-110" onClick={()=> setUpdateModel(true, row.diseaseTypeId) }data-hs-overlay="#hs-vertically-centered-modal" key={row.id}>
+                                            <div className="w-4 mr-2 transform hover:text-purple-500 hover:scale-110" onClick={()=> setUpdateModel(true, row.email) }data-hs-overlay="#hs-vertically-centered-modal" key={row.email}>
                                                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z" />
                                                 </svg>
                                             </div>
-                                            <div className="w-4 mr-2 transform hover:text-purple-500 hover:scale-110" onClick={(event) =>handleDelete(event, row.diseaseTypeId)} >
+                                            <div className="w-4 mr-2 transform hover:text-purple-500 hover:scale-110" onClick={(event) =>handleDelete(event, row.email)} >
                                                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
                                                 </svg>
@@ -203,15 +208,35 @@ const Users = () => {
                         <div x-show="modalOpen" x-transition className="fixed top-0 left-0 flex h-full min-h-screen w-full items-center justify-center bg-[#e5e7eb] bg-opacity-90 px-4 py-5">
                             <div className="w-full max-w-[570px] rounded-[20px] bg-white py-12 px-8 text-center md:py-[60px] md:px-[70px]">
                                 <h3 className="text-dark pb-2 text-xl font-bold sm:text-2xl">Create DiseaseType</h3>
-                                {/* ID */}
+                                {/* EMAIL */}
                                 <div className=" relative ">
-                                    <label for="required-email " value="id" className="text-gray-700  top-0 left-0 flex">ID<span className="text-red-500 required-dot">*</span></label>
-                                    <input type="text" className="my-4 rounded-lg border-transparent flex-1 appearance-none border border-gray-300 w-full py-2 px-4 bg-white text-gray-700 placeholder-gray-400 shadow-sm text-base focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent" placeholder="Disease Type ID" value={diseaseTypeId} onChange={(e)=>setDiseaseTypeId(e.target.value)}/>
+                                    <label for="required-email" value="id" className="text-gray-700  top-0 left-0 flex">Email<span className="text-red-500 required-dot">*</span></label>
+                                    <input type="text" className="my-4 rounded-lg border-transparent flex-1 appearance-none border border-gray-300 w-full py-2 px-4 bg-white text-gray-700 placeholder-gray-400 shadow-sm text-base focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent" placeholder="Disease Type ID" value={email} onChange={(e)=>setEmail(e.target.value)}/>
                                 </div>
-                                {/* DiseaseType Name */}
+                                {/* NAME */}
                                 <div className=" relative ">
-                                    <label for="required-email" value="desctiption" className="text-gray-700 left-0 top-0 flex">Description<span className="text-red-500 required-dot">*</span></label>
-                                    <input type="text"  className="my-4 rounded-lg border-transparent flex-1 appearance-none border border-gray-300 w-full py-2 px-4 bg-white text-gray-700 placeholder-gray-400 shadow-sm text-base focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent" placeholder="DiseaseType Description" value={diseaseTypeDescription} onChange={(e)=>setDiseaseTypeDescription(e.target.value)}/>
+                                    <label for="required-name" value="id" className="text-gray-700  top-0 left-0 flex">Name<span className="text-red-500 required-dot">*</span></label>
+                                    <input type="text" className="my-4 rounded-lg border-transparent flex-1 appearance-none border border-gray-300 w-full py-2 px-4 bg-white text-gray-700 placeholder-gray-400 shadow-sm text-base focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent" placeholder="Disease Type ID" value={name} onChange={(e)=>setName(e.target.value)}/>
+                                </div>
+                                {/* SURNAME */}
+                                <div className=" relative ">
+                                    <label for="required-surname" value="id" className="text-gray-700  top-0 left-0 flex">Surname<span className="text-red-500 required-dot">*</span></label>
+                                    <input type="text" className="my-4 rounded-lg border-transparent flex-1 appearance-none border border-gray-300 w-full py-2 px-4 bg-white text-gray-700 placeholder-gray-400 shadow-sm text-base focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent" placeholder="Disease Type ID" value={surname} onChange={(e)=>setSurname(e.target.value)}/>
+                                </div>
+                                {/* SALARY */}
+                                <div className=" relative ">
+                                    <label for="required-salary" value="id" className="text-gray-700  top-0 left-0 flex">Salary<span className="text-red-500 required-dot">*</span></label>
+                                    <input type="text" className="my-4 rounded-lg border-transparent flex-1 appearance-none border border-gray-300 w-full py-2 px-4 bg-white text-gray-700 placeholder-gray-400 shadow-sm text-base focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent" placeholder="Disease Type ID" value={salary} onChange={(e)=>setSalary(e.target.value)}/>
+                                </div>
+                                {/* PHONE */}
+                                <div className=" relative ">
+                                    <label for="required-phone" value="id" className="text-gray-700  top-0 left-0 flex">Phone<span className="text-red-500 required-dot">*</span></label>
+                                    <input type="text" className="my-4 rounded-lg border-transparent flex-1 appearance-none border border-gray-300 w-full py-2 px-4 bg-white text-gray-700 placeholder-gray-400 shadow-sm text-base focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent" placeholder="Disease Type ID" value={phone} onChange={(e)=>setPhone(e.target.value)}/>
+                                </div>
+                                {/* COUNTRY NAME */}
+                                <div className=" relative ">
+                                    <label for="required-cname" value="id" className="text-gray-700  top-0 left-0 flex">Country Name<span className="text-red-500 required-dot">*</span></label>
+                                    <input type="text" className="my-4 rounded-lg border-transparent flex-1 appearance-none border border-gray-300 w-full py-2 px-4 bg-white text-gray-700 placeholder-gray-400 shadow-sm text-base focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent" placeholder="Disease Type ID" value={cname} onChange={(e)=>setCname(e.target.value)}/>
                                 </div>
 
                                 <div className="-mx-3 flex flex-wrap my-2">

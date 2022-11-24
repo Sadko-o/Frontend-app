@@ -21,9 +21,9 @@ const Tables = () => {
 //     setActive(!active);
 //     }
   return (
-      <div className='fixed max w-screen'>
-          <nav class="bg-white dark:bg-gray-800  shadow ">
-              <div class="max-w-7xl mx-auto px-8">
+      <div className='fixed max w-screen scroll-my-3	 z-10'>
+          <nav class="bg-white dark:bg-gray-800  shadow  ">
+              <div class="max-w-7xl mx-auto px-8 ">
                   <div class="flex items-center justify-between h-16">
                       <div class="w-full justify-between flex items-center">
                           <a class="flex-shrink-0" href="/">
@@ -31,34 +31,34 @@ const Tables = () => {
                           </a>
                           <div class="hidden md:block">
                               <div class="ml-10 flex items-baseline space-x-4">
-                                  <a  class=" text-gray-800  hover:text-[#4885ed] dark:hover:text-white px-3 py-2 rounded-md text-sm font-medium" href="/diseaseType" >
+                                  <a  class=" text-gray-800  hover:text-[#4885ed] dark:text-white px-3 py-2 rounded-md text-sm font-medium" href="/diseaseType" >
                                       DiseaseType
                                   </a>{/* text-gray-800 dark:text-white  hover:text-gray-800 dark:hover:text-white px-3 py-2 rounded-md text-sm font-medium */}
-                                  <a class="text-gray-800  hover:text-[#4885ed] dark:hover:text-white px-3 py-2 rounded-md text-sm font-medium " href="/country">
+                                  <a class="text-gray-800  hover:text-[#4885ed] dark:text-white px-3 py-2 rounded-md text-sm font-medium " href="/country">
                                       Country
                                   </a>
-                                  <a class="text-gray-800  hover:text-[#4885ed] dark:hover:text-white px-3 py-2 rounded-md text-sm font-medium" href="/disease">
+                                  <a class="text-gray-800  hover:text-[#4885ed] dark:text-white px-3 py-2 rounded-md text-sm font-medium" href="/disease">
                                       Disease
                                   </a>
-                                  <a class="text-gray-800  hover:text-[#4885ed] dark:hover:text-white px-3 py-2 rounded-md text-sm font-medium" href="/discover">
+                                  <a class="text-gray-800  hover:text-[#4885ed] dark:text-white px-3 py-2 rounded-md text-sm font-medium" href="/discover">
                                       Discover
                                   </a>
-                                  <a class="text-gray-800  hover:text-[#4885ed] dark:hover:text-white px-3 py-2 rounded-md text-sm font-medium" href="/users">
+                                  <a class="text-gray-800  hover:text-[#4885ed] dark:text-white px-3 py-2 rounded-md text-sm font-medium" href="/users">
                                       Users
                                   </a>
-                                  <a class="text-gray-800  hover:text-[#4885ed] dark:hover:text-white px-3 py-2 rounded-md text-sm font-medium" href="/publicServant">
+                                  <a class="text-gray-800  hover:text-[#4885ed] dark:text-white px-3 py-2 rounded-md text-sm font-medium" href="/publicServant">
                                       PublicServant
                                   </a>
-                                  <a class="text-gray-800  hover:text-[#4885ed] dark:hover:text-white px-3 py-2 rounded-md text-sm font-medium" href="/doctors">
+                                  <a class="text-gray-800  hover:text-[#4885ed] dark:text-white px-3 py-2 rounded-md text-sm font-medium" href="/doctors">
                                       Doctor
                                   </a>
-                                  <a class="text-gray-800  hover:text-[#4885ed] dark:hover:text-white px-3 py-2 rounded-md text-sm font-medium" href="/specialize">
+                                  <a class="text-gray-800  hover:text-[#4885ed] dark:text-white px-3 py-2 rounded-md text-sm font-medium" href="/specialize">
                                       Specialize
                                   </a>
-                                  <a class="text-gray-800  hover:text-[#4885ed] dark:hover:text-white px-3 py-2 rounded-md text-sm font-medium" href="/record">
+                                  <a class="text-gray-800  hover:text-[#4885ed] dark:text-white px-3 py-2 rounded-md text-sm font-medium" href="/record">
                                       Record
                                   </a>
-                                  <a class="text-gray-800  hover:text-[#4885ed] dark:hover:text-white px-3 py-2 rounded-md text-sm font-medium" href="/#">
+                                  <a class="text-gray-800  hover:text-[#4885ed] dark:text-white px-3 py-2 rounded-md text-sm font-medium" href="/queries">
                                       Queries
                                   </a>
                               </div>

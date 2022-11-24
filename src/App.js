@@ -10,6 +10,7 @@ import PublicServant from './components/PublicServant';
 import Doctors from './components/Doctors';
 import Specialize from './components/Specialize';
 import Record from './components/Record';
+import Queries from './components/Queries';
 
 
 function App() {
@@ -27,6 +28,7 @@ function App() {
             <Route exact path='/doctors' element={< Doctors />}></Route>
             <Route exact path='/specialize' element={< Specialize />}></Route>
             <Route exact path='/record' element={< Record />}></Route>
+            <Route exact path='/queries' element={< Queries />}></Route>
         </Routes>
       </Router>
     // </div>
